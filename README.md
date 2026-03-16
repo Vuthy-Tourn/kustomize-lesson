@@ -1,8 +1,10 @@
 # Kustomize Lesson
+<p align="center">
+  <img src="https://redhat-scholars.github.io/argocd-tutorial/argocd-tutorial/_images/kustomize_logo.png" width="200" alt="Kubernetes Logo">
+</p>
 
 **Kustomize** lets you customize raw, template-free YAML files for multiple purposes, leaving the original YAML untouched and usable as is.
 
-A practical guide to managing Kubernetes configurations with Kustomize — covering everything from bases and overlays to advanced patching, generators, components, and transformers.
 ---
 
 ## Overview
