@@ -1,0 +1,14 @@
+#!/bin/bash
+
+render-dev:
+    echo "Rendering dev configuration "
+    kustomize build \
+        --load-restrictor LoadRestrictionsNone \
+        --enable-helm kustomize/overlays/dev 
+     
+render-prod: 
+    @echo "Rending prod configuration " 
+    kustomize build --load-restrictor LoadRestrictionsNone \
+        --enable-helm kustomize/overlays/prod 
+
+# --load-restrictor LoadRestrictionsNone : because we place the chart outside the kustomize folder it, so doesn't let it restrict, by default, it restrict.

@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization 
+# resources: 
+#  - ../../base 
+
+helmGlobals:
+  chartHome: ../../../
+# Overwride Helm values specifically for production 
+helmCharts:
+  - name: sample-chart 
+    releaseName: my-app 
+    # value inside kustomize/overlays/prod
+    valuesFile: values.yaml 
+
+namespace: prod-namespace 
+# Example kustomize "Patch" to add a label to everything
+labels:
+  - includeSelectors: true 
+    pairs: 
+      env: production
