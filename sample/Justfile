@@ -1,0 +1,6 @@
+#!/bin/bash
+render-dev:
+    kubectl kustomize overlay/dev
+
+render-prod:
+    kubectl kustomize overlay/prod

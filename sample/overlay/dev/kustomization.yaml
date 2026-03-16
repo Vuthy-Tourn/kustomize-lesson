@@ -1,0 +1,21 @@
+resources:
+  - ../../base
+
+replicas:
+  - name: myapp
+    count: 2
+
+images:
+  - name: nginx:alpine
+    newName: 669969/earthdx
+    newTag: latest
+
+configMapGenerator:
+  - name: app-config
+    files: 
+      - ./config.properties
+
+secretGenerator:
+  - name: app-secrets
+    files:
+      - ./secret.env
